@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HDemoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BasicAttr">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AttrName" Type="text" />
+          <Property Name="Holding_City" Type="text" />
+          <Property Name="Start_Time" Type="text" />
+          <Property Name="End_Time" Type="text" />
+          <Property Name="Is_International" Type="bit" />
+          <Property Name="Is_c_Government" Type="bit" />
+          <Property Name="Is_p_Government" Type="bit" />
+          <Property Name="Is_l_Government" Type="bit" />
+          <Property Name="Is_Homecivil_Association" Type="bit" />
+          <Property Name="Is_Intercivil_Association" Type="bit" />
+          <Property Name="Is_Hometrade_Association" Type="bit" />
+          <Property Name="Is_Intertrade_Association" Type="bit" />
+          <Property Name="Is_Influence_Children" Type="bit" />
+          <Property Name="Is_Influence_Young" Type="bit" />
+          <Property Name="Is_Influence_Adult" Type="bit" />
+          <Property Name="Is_Influence_Old" Type="bit" />
+          <Property Name="Participant_Population" Type="bit" />
+          <Property Name="Is_Influence_Business" Type="bit" />
+          <Property Name="Is_Influence_Generalpublic" Type="bit" />
+          <Property Name="Is_Influence_Worldwide" Type="bit" />
+          <Property Name="Is_Influence_Intercontinental" Type="bit" />
+          <Property Name="Is_Influence_Wholecountry" Type="bit" />
+          <Property Name="Is_Influence_Province" Type="bit" />
+          <Property Name="Is_Influence_City" Type="bit" />
+          <Property Name="Is_Exhibition" Type="bit" />
+          <Property Name="Is_Concert" Type="bit" />
+          <Property Name="Is_Sportevent" Type="bit" />
+          <Property Name="Is_Meeting" Type="bit" />
+          <Property Name="Is_Localholiday" Type="bit" />
+          <Property Name="Event_Fever" Type="int" />
+          <Property Name="Event_History" Type="int" />
+          <Property Name="Freq" Type="int" />
+        </EntityType>
+        <EntityType Name="WebRule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UrlName" Type="varchar" MaxLength="50" />
+          <Property Name="WebName" Type="varchar" MaxLength="50" />
+          <Property Name="UrlWeb" Type="text" />
+          <Property Name="WebContentXpath" Type="text" />
+          <Property Name="Response" Type="varchar" MaxLength="50" />
+          <Property Name="RequestUrl" Type="varchar" MaxLength="200" />
+          <Property Name="AttrContentXpath" Type="text" />
+          <Property Name="PageXpath" Type="text" />
+        </EntityType>
+        <EntityContainer Name="HDemoModelStoreContainer">
+          <EntitySet Name="BasicAttr" EntityType="Self.BasicAttr" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WebRule" EntityType="Self.WebRule" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HDemoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HDemoEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BasicAttr" EntityType="HDemoModel.BasicAttr" />
+          <EntitySet Name="WebRule" EntityType="HDemoModel.WebRule" />
+        </EntityContainer>
+        <EntityType Name="BasicAttr">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AttrName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Holding_City" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Start_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="End_Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Is_International" Type="Boolean" />
+          <Property Name="Is_c_Government" Type="Boolean" />
+          <Property Name="Is_p_Government" Type="Boolean" />
+          <Property Name="Is_l_Government" Type="Boolean" />
+          <Property Name="Is_Homecivil_Association" Type="Boolean" />
+          <Property Name="Is_Intercivil_Association" Type="Boolean" />
+          <Property Name="Is_Hometrade_Association" Type="Boolean" />
+          <Property Name="Is_Intertrade_Association" Type="Boolean" />
+          <Property Name="Is_Influence_Children" Type="Boolean" />
+          <Property Name="Is_Influence_Young" Type="Boolean" />
+          <Property Name="Is_Influence_Adult" Type="Boolean" />
+          <Property Name="Is_Influence_Old" Type="Boolean" />
+          <Property Name="Participant_Population" Type="Boolean" />
+          <Property Name="Is_Influence_Business" Type="Boolean" />
+          <Property Name="Is_Influence_Generalpublic" Type="Boolean" />
+          <Property Name="Is_Influence_Worldwide" Type="Boolean" />
+          <Property Name="Is_Influence_Intercontinental" Type="Boolean" />
+          <Property Name="Is_Influence_Wholecountry" Type="Boolean" />
+          <Property Name="Is_Influence_Province" Type="Boolean" />
+          <Property Name="Is_Influence_City" Type="Boolean" />
+          <Property Name="Is_Exhibition" Type="Boolean" />
+          <Property Name="Is_Concert" Type="Boolean" />
+          <Property Name="Is_Sportevent" Type="Boolean" />
+          <Property Name="Is_Meeting" Type="Boolean" />
+          <Property Name="Is_Localholiday" Type="Boolean" />
+          <Property Name="Event_Fever" Type="Int32" />
+          <Property Name="Event_History" Type="Int32" />
+          <Property Name="Freq" Type="Int32" />
+        </EntityType>
+        <EntityType Name="WebRule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UrlName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UrlWeb" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="WebContentXpath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Response" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RequestUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="WebName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AttrContentXpath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PageXpath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HDemoModelStoreContainer" CdmEntityContainer="HDemoEntities">
+          <EntitySetMapping Name="BasicAttr">
+            <EntityTypeMapping TypeName="HDemoModel.BasicAttr">
+              <MappingFragment StoreEntitySet="BasicAttr">
+                <ScalarProperty Name="Freq" ColumnName="Freq" />
+                <ScalarProperty Name="Event_History" ColumnName="Event_History" />
+                <ScalarProperty Name="Event_Fever" ColumnName="Event_Fever" />
+                <ScalarProperty Name="Is_Localholiday" ColumnName="Is_Localholiday" />
+                <ScalarProperty Name="Is_Meeting" ColumnName="Is_Meeting" />
+                <ScalarProperty Name="Is_Sportevent" ColumnName="Is_Sportevent" />
+                <ScalarProperty Name="Is_Concert" ColumnName="Is_Concert" />
+                <ScalarProperty Name="Is_Exhibition" ColumnName="Is_Exhibition" />
+                <ScalarProperty Name="Is_Influence_City" ColumnName="Is_Influence_City" />
+                <ScalarProperty Name="Is_Influence_Province" ColumnName="Is_Influence_Province" />
+                <ScalarProperty Name="Is_Influence_Wholecountry" ColumnName="Is_Influence_Wholecountry" />
+                <ScalarProperty Name="Is_Influence_Intercontinental" ColumnName="Is_Influence_Intercontinental" />
+                <ScalarProperty Name="Is_Influence_Worldwide" ColumnName="Is_Influence_Worldwide" />
+                <ScalarProperty Name="Is_Influence_Generalpublic" ColumnName="Is_Influence_Generalpublic" />
+                <ScalarProperty Name="Is_Influence_Business" ColumnName="Is_Influence_Business" />
+                <ScalarProperty Name="Participant_Population" ColumnName="Participant_Population" />
+                <ScalarProperty Name="Is_Influence_Old" ColumnName="Is_Influence_Old" />
+                <ScalarProperty Name="Is_Influence_Adult" ColumnName="Is_Influence_Adult" />
+                <ScalarProperty Name="Is_Influence_Young" ColumnName="Is_Influence_Young" />
+                <ScalarProperty Name="Is_Influence_Children" ColumnName="Is_Influence_Children" />
+                <ScalarProperty Name="Is_Intertrade_Association" ColumnName="Is_Intertrade_Association" />
+                <ScalarProperty Name="Is_Hometrade_Association" ColumnName="Is_Hometrade_Association" />
+                <ScalarProperty Name="Is_Intercivil_Association" ColumnName="Is_Intercivil_Association" />
+                <ScalarProperty Name="Is_Homecivil_Association" ColumnName="Is_Homecivil_Association" />
+                <ScalarProperty Name="Is_l_Government" ColumnName="Is_l_Government" />
+                <ScalarProperty Name="Is_p_Government" ColumnName="Is_p_Government" />
+                <ScalarProperty Name="Is_c_Government" ColumnName="Is_c_Government" />
+                <ScalarProperty Name="Is_International" ColumnName="Is_International" />
+                <ScalarProperty Name="End_Time" ColumnName="End_Time" />
+                <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+                <ScalarProperty Name="Holding_City" ColumnName="Holding_City" />
+                <ScalarProperty Name="AttrName" ColumnName="AttrName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WebRule">
+            <EntityTypeMapping TypeName="HDemoModel.WebRule">
+              <MappingFragment StoreEntitySet="WebRule">
+                <ScalarProperty Name="PageXpath" ColumnName="PageXpath" />
+                <ScalarProperty Name="AttrContentXpath" ColumnName="AttrContentXpath" />
+                <ScalarProperty Name="WebName" ColumnName="WebName" />
+                <ScalarProperty Name="RequestUrl" ColumnName="RequestUrl" />
+                <ScalarProperty Name="Response" ColumnName="Response" />
+                <ScalarProperty Name="WebContentXpath" ColumnName="WebContentXpath" />
+                <ScalarProperty Name="UrlWeb" ColumnName="UrlWeb" />
+                <ScalarProperty Name="UrlName" ColumnName="UrlName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.time = DateTime.Now.Month;
+ }
+@section scripts{
+    <script src="/Content/js/ajaxfunction.js"></script>
+    <script src="/Content/js/indexjsfunc.js"></script>
+}
+<div class="row main_Index_page">
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+        <div class="btn-group">
+            <button class="btn btn-info dropdown-toggle" type="button" id="dropdownWeb" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                --请选择网站--
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownWeb" id="WebList">
+                <li class="disabled"><a href="#">演唱会类网站</a></li>
+                <li><a href="#">https://search.damai.cn/search.html?ctl=演唱会</a></li>
+                <li><a href="#">http://www.228.com.cn/category/yanchanghui/</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="disabled"><a href="#">体育赛事类网站</a></li>
+                <li><a href="#">https://search.damai.cn/search.html?ctl=体育比赛</a></li>
+                <li><a href="#">http://www.228.com.cn/category/tiyusaishi/</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="disabled"><a href="#">展会类网站</a></li>
+                <li><a href="#">http://www.eshow365.com/guonei/</a></li>
+                <li><a href="#">http://www.cnena.com/showroom/list_time.php?daytime=@ViewBag.time</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="disabled"><a href="#">突发天气类网站</a></li>
+                <li><a href="#">http://www.tianqi.com/alarmnews</a></li>
+                <li><a href="#">http://www.12379.cn/html/yjxx/</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="disabled"><a href="#">政治会议类网站</a></li>
+                <li><a href="#">找不到网站源</a></li>
+                <li><a href="#">找不到网站源</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="input-group">
+            <input type="text" id="webUrl" class="form-control" placeholder="Please enter the URL...">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="enterUrl">OK!</button>
+            </span>
+        </div><!-- /input-group -->
+    </div>
+    <div class="col-md-1"></div>
+</div>
+<div class="row show_grid">
+
+    @(Html.Kendo().Grid<HDemo.Models.BasicAttr>()
+        .Name("BasicAttr")
+        .Columns(columns =>
+        {
+            columns.Bound(c => c.Id).Width(60).Title("ID");
+            columns.Bound(c => c.AttrName).Width(400).Title("事件名称");
+            columns.Bound(c => c.Start_Time).Width(80).Title("开始时间");
+            columns.Bound(c => c.End_Time).Title("结束时间").Width(80);
+            columns.Bound(c => c.Holding_City).Width(80).Title("举办城市");
+            columns.Bound(c => c.Is_International).Width(120).Title("是否是国际组织");
+            columns.Bound(c => c.Is_c_Government).Width(120).Title("是否是国家政府");
+            columns.Bound(c => c.Is_p_Government).Width(120).Title("是否是省政府");
+            columns.Bound(c => c.Is_l_Government).Width(120).Title("是否是地方政府");
+            columns.Bound(c => c.Is_Homecivil_Association).Width(150).Title("是否是国内民间协会");
+            columns.Bound(c => c.Is_Intercivil_Association).Width(150).Title("是否是国际民间协会");
+            columns.Bound(c => c.Is_Hometrade_Association).Width(150).Title("是否是国内行业协会");
+            columns.Bound(c => c.Is_Intercivil_Association).Width(150).Title("是否是国际行业协会");
+            columns.Bound(c => c.Is_Influence_Children).Width(160).Title("主要影响年龄层为儿童");
+            columns.Bound(c => c.Is_Influence_Young).Width(160).Title("主要影响年龄层为青年");
+            columns.Bound(c => c.Is_Influence_Adult).Width(160).Title("主要影响年龄层为成年");
+            columns.Bound(c => c.Is_Influence_Old).Width(160).Title("主要影响年龄层为老年");
+            columns.Bound(c => c.Participant_Population).Width(130).Title("是否有固定人群");
+            columns.Bound(c => c.Is_Influence_Business).Width(150).Title("是否影响商务人群");
+            columns.Bound(c => c.Is_Influence_Generalpublic).Width(150).Title("是否影响社会大众");
+            columns.Bound(c => c.Is_Influence_Worldwide).Width(120).Title("最大影响全球");
+            columns.Bound(c => c.Is_Influence_Intercontinental).Width(120).Title("最大影响洲际");
+            columns.Bound(c => c.Is_Influence_Wholecountry).Width(120).Title("最大影响全国");
+            columns.Bound(c => c.Is_Influence_Province).Width(120).Title("最大影响全省");
+            columns.Bound(c => c.Is_Influence_City).Width(120).Title("最大影响全市");
+            columns.Bound(c => c.Is_Exhibition).Width(100).Title("是否是展会");
+            columns.Bound(c => c.Is_Concert).Width(110).Title("是否是演唱会");
+            columns.Bound(c => c.Is_Sportevent).Width(120).Title("是否是体育赛事");
+            columns.Bound(c => c.Is_Meeting).Width(100).Title("是否是会议");
+            columns.Bound(c => c.Is_Localholiday).Width(150).Title("是否是地方性节假日");
+            columns.Bound(c => c.Event_Fever).Width(80).Title("事件热度");
+            columns.Bound(c => c.Event_History).Width(150).Title("事件历史悠久程度");
+            columns.Bound(c => c.Freq).Width(150).Title("事件一年内频率");
+        })
+        .HtmlAttributes(new { style = "width:100%;overflow:auto;height:700px;margin-buttom:0px;" })
+        .Editable(c => c.Mode(GridEditMode.InLine))
+        .Sortable()
+        .Scrollable()
+        .Pageable(pageable => pageable
+            .Refresh(true)
+            .ButtonCount(8)
+            )
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .PageSize(100)
+            .Model(model => model.Id(p => p.Id))
+            .Read(read => read.Action("GetJson", "Home"))
+        )
+    )
+
+</div>
